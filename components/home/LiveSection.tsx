@@ -68,7 +68,7 @@ function ProjectCard({
   project: LiveProject;
   index: number;
   total: number;
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const { scrollYProgress } = useScroll({
     target: containerRef,
