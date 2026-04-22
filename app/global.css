@@ -18,7 +18,8 @@ body {
   letter-spacing: 2px;
 }
 
-.terminal-content {
+.terminal-content,
+.body-content {
   font-family: var(--terminal-font);
 }
 

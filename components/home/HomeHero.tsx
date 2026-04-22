@@ -68,7 +68,7 @@ export default function HomeHero() {
   }, [charIndex, lineIndex]);
 
   return (
-    <section className="min-h-screen bg-black text-white relative overflow-hidden pt-25">
+    <section className="min-h-screen bg-black text-white relative overflow-hidden py-25 ">
       <div
         className="absolute top-0 right-0 w-96 h-96 opacity-10 pointer-events-none"
         style={{
@@ -101,13 +101,13 @@ export default function HomeHero() {
             <span className="cursor-blink">▌</span>
           </div>
 
-          <div className="flex gap-4 pt-4">
+          <div className="flex gap-4 pt-4 body-content">
             <button
               type="button"
               onClick={() => {
                 window.location.href = "mailto:yourmail@gmail.com";
               }}
-              className="font-semibold px-8 py-3 cursor-pointer rounded-full bg-slate-600 text-black sm:text-md hover:bg-slate-500 transition flex items-center gap-2 arcade-border"
+              className=" px-8 py-3 cursor-pointer rounded-full bg-slate-600 text-black sm:text-md hover:bg-slate-500 transition flex items-center gap-2"
             >
               Contact Me
               <ArrowRightIcon className="w-4 h-4" />
@@ -116,7 +116,7 @@ export default function HomeHero() {
             <button
               type="button"
               onClick={() => router.push("/today")}
-              className="px-8 py-3 rounded-full border border-slate-500 text-slate-400 font-semibold sm:text-md hover:bg-slate-900 hover:text-white transition flex items-center gap-2 ar"
+              className="px-8 py-3 rounded-full border border-slate-500 text-slate-400  sm:text-md hover:bg-slate-900 hover:text-white transition flex items-center gap-2 ar"
             >
               See Today
               <ArrowRightIcon className="w-4 h-4" />

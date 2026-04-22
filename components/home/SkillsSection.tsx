@@ -65,8 +65,8 @@ export default function SkillsSection() {
   const icons = skillsMap[activeSkill.label];
 
   return (
-    <section className="bg-black px-6 py-20 text-white">
-      <div className="max-w-7xl mx-auto mb-8 border-t border-slate-700/70 pt-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+    <section className="bg-black px-6 py-10 text-white border-t border-slate-700/70 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto mb-8  pt-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
             [ SKILL MATRIX ]

@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-1 text-xs transition-all duration-300 px-2 py-1 rounded-full ${isActive ? "text-white bg-gray-800" : "text-gray-400 hover:text-gray-200"}`}
+              className={`flex items-center gap-1 text-xs transition-all duration-300 px-2 py-1 rounded-full body-content ${isActive ? "text-white bg-gray-800" : "text-gray-400 hover:text-gray-200"}`}
             >
               <span>{item.icon}</span>
               <span>{item.name}</span>
