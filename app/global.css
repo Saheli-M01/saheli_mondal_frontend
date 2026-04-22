@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+/* Terminal & Arcade Feel */
+:root {
+  --arcade-font: "Press Start 2P", cursive;
+  --terminal-font: "JetBrains Mono", "Fira Code", monospace;
+}
+
+body {
+  background: #000;
+}
+
+/* Arcade title styling */
+.arcade-title {
+  font-family: var(--arcade-font);
+  letter-spacing: 2px;
+}
+
+.terminal-content {
+  font-family: var(--terminal-font);
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1.1s infinite;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bar-shimmer {
+  0% {
+    filter: brightness(0.95);
+  }
+
+  50% {
+    filter: brightness(1.15);
+  }
+
+  100% {
+    filter: brightness(0.95);
+  }
+}
+
+.skill-card {
+  animation: float-card 6s ease-in-out infinite;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.skill-bar {
+  animation: bar-shimmer 2.8s ease-in-out infinite;
+}
+
+@keyframes pill-drift {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+}
+
+.floating-pill {
+  animation: pill-drift 5s ease-in-out infinite;
+}
