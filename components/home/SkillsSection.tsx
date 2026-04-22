@@ -71,7 +71,7 @@ export default function SkillsSection() {
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
             [ SKILL MATRIX ]
           </div>
-          <p className="mt-3 max-w-2xl text-sm md:text-base text-slate-400 terminal-content">
+          <p className="mt-3 max-w-2xl text-sm md:text-base text-slate-400 body-content">
             A compact matrix of the stack I use most often.
           </p>
         </div>
