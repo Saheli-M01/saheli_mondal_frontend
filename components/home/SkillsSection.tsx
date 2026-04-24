@@ -65,7 +65,7 @@ export default function SkillsSection() {
   const icons = skillsMap[activeSkill.label];
 
   return (
-    <section className="bg-black px-6 py-10 text-white border-t border-slate-700/70 max-w-7xl mx-auto">
+    <section className="bg-black mt-6 md:mt-0 px-6 py-5 md:py-10 text-white border-t border-slate-700/70 max-w-7xl mx-auto">
       <div className="max-w-7xl mx-auto mb-8  pt-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
@@ -76,7 +76,7 @@ export default function SkillsSection() {
           </p>
         </div>
         <div className="terminal-content text-xs md:text-sm text-slate-500">
-          {">"} hover a cell to pin the icon set
+          {">"} hover/click a cell to pin the icon set
         </div>
       </div>
 
@@ -86,17 +86,17 @@ export default function SkillsSection() {
           className="relative rounded-2xl border border-slate-400/25 bg-[#0D0D0D]/95 p-6 shadow-[0_0_70px_rgba(255,255,255,0.04)] font-mono overflow-hidden"
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="px-14 ">
+          <div className="px-2 md:px-14">
             {/* top index */}
-            <div className="grid grid-cols-[1fr_1fr] text-center text-xs text-slate-400 mb-4 pl-8 pr-8 border-b border-slate-700/70 pb-3">
+            <div className="grid grid-cols-[1fr_1fr] text-center text-xs text-slate-400 mb-4 pl-6 md:pl-8 pr-2 md:pr-8 border-b border-slate-700/70 pb-3">
               <div>0</div>
               <div>1</div>
             </div>
 
             {/* matrix */}
             <div className="relative">
-              <div className="pointer-events-none absolute left-[28px] top-0 bottom-0 w-px bg-slate-700/70" />
-              <div className="grid grid-cols-[28px_repeat(2,1fr)] gap-x-8 gap-y-8 items-center">
+              <div className="pointer-events-none absolute left-[20px] md:left-[28px] top-0 bottom-0 w-px bg-slate-700/70" />
+              <div className="grid grid-cols-[20px_repeat(2,1fr)] md:grid-cols-[28px_repeat(2,1fr)] gap-x-4 md:gap-x-8 gap-y-8 items-center">
                 {matrix.map((row, r) => (
                   <Fragment key={r}>
                     <div className="text-xs text-slate-400 flex items-center justify-center min-h-24">

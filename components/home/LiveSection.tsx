@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { GithubIcon, ArrowRightIcon } from "@/components/icons/Icon";
+import { ArrowRightIcon } from "@/components/icons/Icon";
 
 type LiveProject = {
   name: string;
@@ -13,50 +13,59 @@ type LiveProject = {
   description: string;
   image: string;
   live: string;
-  github: string;
 };
 
 const liveProjects: LiveProject[] = [
   {
+    name: "Visco",
+    status: "1st phase deployed",
+    stack: ["React", "Tailwind", "Vite"],
+    description:
+      "An interactive platform for visualizing data structures and algorithms through smooth animations and real-time code representation, making complex concepts easier to understand.",
+    image: "/assets/project/visco.png",
+    live: "https://visualizecode.vercel.app/",
+  },
+  {
+    name: "Speak Your Mind",
+    status: "deployed",
+    stack: ["Next.js", "Tailwind", "Firebase"],
+    description:
+      "A modern social platform that allows users to share thoughts, stories, and ideas in a clean, distraction-free environment while enabling real-time interaction.",
+    image: "/assets/project/speak_your_mind.png",
+    live: "https://speak-your-mind-three.vercel.app/",
+  },
+  {
     name: "Portfolio Terminal",
-    status: "Live",
-    stack: ["Next.js", "Tailwind"],
+    status: "1st phase deployed",
+    stack: ["Next.js", "Tailwind", "Framer Motion", "Springboot",],
     description:
-      "Interactive personal site with terminal-inspired UI and dynamic sections.",
-    image: "/projects/portfolio.png",
-    live: "#",
-    github: "#",
+      "A unique terminal-inspired portfolio featuring interactive commands, dynamic transitions, and a developer-centric user experience.",
+    image: "/assets/project/portfolio.png",
+    live: "https://sahelimondal.in",
   },
   {
-    name: "Chat Notes",
-    status: "In Progress",
-    stack: ["React", "Firebase"],
+    name: "GetDoIt",
+    status: "working",
+    stack: ["Next.js", "PostgreSQL", "OpenAI API", "Springboot", "Firebase"],
     description:
-      "Thread-based notes app with fast search and structured conversations.",
-    image: "/projects/chatnotes.png",
-    live: "#",
-    github: "#",
-  },
-  {
-    name: "Focus Sprint",
-    status: "Live",
-    stack: ["TypeScript", "Framer Motion"],
-    description:
-      "Productivity timer with analytics and weekly performance tracking.",
-    image: "/projects/focus.png",
-    live: "#",
-    github: "#",
-  },
-  {
-    name: "API Monitor",
-    status: "Planned",
-    stack: ["Node.js", "PostgreSQL"],
-    description: "Monitor uptime, latency, and incidents across your services.",
-    image: "/projects/api.png",
-    live: "#",
-    github: "#",
+      "A full-featured task management application designed to streamline productivity with structured workflows, intuitive UI, and scalable backend integration.",
+    image: "/assets/project/get_do_it.png",
+    live: "https://getdoit.in",
   },
 ];
+
+const getStatusColor = (status: string) => {
+  switch (status.toLowerCase()) {
+    case "deployed":
+      return "text-emerald-400 border-emerald-400/30 bg-emerald-400/10";
+    case "1st phase deployed":
+      return "text-blue-400 border-blue-400/30 bg-blue-400/10";
+    case "working":
+      return "text-amber-400 border-amber-400/30 bg-amber-400/10";
+    default:
+      return "text-slate-300 border-white/20 bg-white/5";
+  }
+};
 
 // ─── Each card is its own component so hooks are called at the top level ───────
 function ProjectCard({
@@ -111,7 +120,7 @@ function ProjectCard({
           {/* TITLE + STATUS */}
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-lg md:text-xl font-semibold">{project.name}</h3>
-            <span className="text-[10px] uppercase tracking-wider border border-white/20 px-2 py-0.5 rounded-full text-slate-300">
+            <span className={`text-[10px] uppercase tracking-wider border px-2 py-0.5 rounded-full ${getStatusColor(project.status)}`}>
               {project.status}
             </span>
           </div>
@@ -124,7 +133,7 @@ function ProjectCard({
             {project.stack.map((tech) => (
               <span
                 key={tech}
-                className="text-[10px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300"
+                className="text-[12px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-colors"
               >
                 {tech}
               </span>
@@ -139,13 +148,6 @@ function ProjectCard({
             >
               Live
               <ArrowRightIcon className="w-3 h-3" />
-            </Link>
-            <Link
-              href={project.github}
-              className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-400 hover:text-white"
-            >
-              <GithubIcon className="w-4 h-4" />
-              Code
             </Link>
           </div>
         </div>

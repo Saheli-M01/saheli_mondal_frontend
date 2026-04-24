@@ -1,5 +1,15 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./global.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Saheli Mondal | Full Stack Developer",
+  description: "Portfolio of Saheli Mondal - Building real projects and learning daily.",
+  icons: {
+    icon: "/assets/portrait.png",
+  },
+};
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -21,6 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Navbar />
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

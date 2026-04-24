@@ -11,6 +11,7 @@ import {
   XIcon,
 } from "@/components/icons/Icon";
 import portrait from "@/public/assets/portrait.png";
+import ContactModal from "@/components/ContactModal";
 
 const lines = [
   ">> whoami",
@@ -46,6 +47,7 @@ export default function HomeHero() {
   const [text, setText] = useState("");
   const [lineIndex, setLineIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     if (lineIndex >= lines.length) return;
@@ -68,7 +70,7 @@ export default function HomeHero() {
   }, [charIndex, lineIndex]);
 
   return (
-    <section className="min-h-screen bg-black text-white relative overflow-hidden py-25 ">
+    <section className="min-h-screen bg-black text-white relative overflow-hidden md:py-25 ">
       <div
         className="absolute top-0 right-0 w-96 h-96 opacity-10 pointer-events-none"
         style={{
@@ -78,9 +80,9 @@ export default function HomeHero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto h-full flex items-center relative z-10 px-6">
-        <div className="w-1/2 flex justify-center">
-          <div className="relative w-96 h-[600px] group">
+      <div className="max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center relative z-10 px-6 gap-12 md:gap-0 pt-24 md:pt-0">
+        <div className="w-full md:w-1/2 flex justify-center">
+          <div className="relative w-72 h-[400px] md:w-96 md:h-[600px] group">
             <Image
               src={portrait}
               alt="Saheli"
@@ -91,7 +93,7 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <div className="w-1/2 pl-12 space-y-8">
+        <div className="w-full md:w-1/2 md:pl-12 space-y-8">
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem] mb-6">
             [ PORTFOLIO TERMINAL ]
           </div>
@@ -104,31 +106,29 @@ export default function HomeHero() {
           <div className="flex gap-4 pt-4 body-content">
             <button
               type="button"
-              onClick={() => {
-                window.location.href = "mailto:yourmail@gmail.com";
-              }}
+              onClick={() => setIsContactOpen(true)}
               className=" px-8 py-3 cursor-pointer rounded-full bg-slate-600 text-black sm:text-md hover:bg-slate-500 transition flex items-center gap-2"
             >
               Contact Me
               <ArrowRightIcon className="w-4 h-4" />
             </button>
 
-            <button
+            {/* <button
               type="button"
               onClick={() => router.push("/today")}
               className="px-8 py-3 rounded-full border border-slate-500 text-slate-400  sm:text-md hover:bg-slate-900 hover:text-white transition flex items-center gap-2 ar"
             >
               See Today
               <ArrowRightIcon className="w-4 h-4" />
-            </button>
+            </button> */}
           </div>
 
           <div className="flex items-center gap-6 border-t border-zinc-700 mt-8 pt-2">
-            <span className="text-slate-400 text-xs arcade-title">
+            <span className="text-slate-400 text-[0.55rem] md:text-[0.65rem] arcade-title">
               {">>>"} CONNECT:
             </span>
             <a
-              href="https://github.com/yourprofile"
+              href="https://github.com/Saheli-M01"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-green-400 transition duration-300 transform hover:scale-125"
@@ -137,7 +137,7 @@ export default function HomeHero() {
               <GithubIcon className="w-6 h-6" />
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/saheli-mondal-b9387729b/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition duration-300 transform hover:scale-125"
@@ -146,7 +146,7 @@ export default function HomeHero() {
               <LinkedinIcon className="w-6 h-6" />
             </a>
             <a
-              href="https://twitter.com/yourprofile"
+              href="https://x.com/Mond_Saheli"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyan-400 transition duration-300 transform hover:scale-125"
@@ -155,7 +155,7 @@ export default function HomeHero() {
               <XIcon className="w-6 h-6" />
             </a>
             <a
-              href="mailto:yourmail@gmail.com"
+              href="mailto:saheli.mondal.prof@gmail.com"
               className="text-gray-400 hover:text-red-400 transition duration-300 transform hover:scale-125"
               title="Email"
             >
@@ -164,6 +164,10 @@ export default function HomeHero() {
           </div>
         </div>
       </div>
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </section>
   );
 }

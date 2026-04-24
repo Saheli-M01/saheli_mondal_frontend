@@ -18,13 +18,13 @@ export default function Navbar() {
     { name: "Saheli", href: "/", icon: <HomeIcon /> },
     // { name: "Today", href: "/today", icon: <CalendarIcon /> },
     // { name: "Play", href: "/play", icon: <PlayIcon /> },
-    { name: "Ask Me", href: "/ask", icon: <MessageIcon /> },
+    // { name: "Ask Me", href: "/ask", icon: <MessageIcon /> },
     { name: "Live", href: "#live", icon: <RadioIcon /> },
   ];
   return (
     <div className="fixed top-6 w-full flex justify-center z-50 body-content">
       <div
-        className="flex items-center gap-6 px-6 py-3 rounded-full 
+        className="flex items-center gap-2 sm:gap-6 px-4 sm:px-6 py-3 rounded-full 
                  bg-[#111] border border-gray-800 
                  shadow-lg backdrop-blur-md"
       >
@@ -42,11 +42,10 @@ export default function Navbar() {
                     router.push("/");
                   }
                 }}
-                className={`cursor-pointer flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${
-                  pathname === "/"
-                    ? "text-white bg-gray-800"
-                    : "text-gray-400 hover:text-gray-200"
-                }`}
+                className={`cursor-pointer flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${pathname === "/"
+                  ? "text-white bg-gray-800"
+                  : "text-gray-400 hover:text-gray-200"
+                  }`}
               >
                 <span>{item.icon}</span>
                 <span>{item.name}</span>
@@ -94,11 +93,10 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${
-                isActive
-                  ? "text-white bg-gray-800"
-                  : "text-gray-400 hover:text-gray-200"
-              }`}
+              className={`flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${isActive
+                ? "text-white bg-gray-800"
+                : "text-gray-400 hover:text-gray-200"
+                }`}
             >
               <span>{item.icon}</span>
               <span>{item.name}</span>
@@ -106,9 +104,9 @@ export default function Navbar() {
           );
         })}
 
-        <button className="text-gray-400 hover:text-white p-2 rounded-full ml-2">
+        {/* <button className="text-gray-400 hover:text-white p-2 rounded-full ml-2">
           <SettingsIcon />
-        </button>
+        </button> */}
       </div>
     </div>
   );
