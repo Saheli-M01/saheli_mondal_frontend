@@ -173,7 +173,7 @@ export default function LiveSection() {
             [ LIVE PROJECTS ]
           </div>
           <p className="mt-3 text-center max-w-full text-sm md:text-base text-slate-400 body-content">
-            Things I'm Building & Shipping
+            Things I&apos;m Building & Shipping
           </p>
         </div>
 

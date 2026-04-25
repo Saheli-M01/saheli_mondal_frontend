@@ -11,7 +11,9 @@ import {
   XIcon,
 } from "@/components/icons/Icon";
 import portrait from "@/public/assets/portrait.png";
+import portraitProfessional from "@/public/assets/portrait_professional.png";
 import ContactModal from "@/components/ContactModal";
+import { useViewMode } from "@/context/ViewModeContext";
 
 const lines = [
   ">> whoami",
@@ -44,10 +46,14 @@ const getTypingDelay = (line: string, charIndex: number) => {
 
 export default function HomeHero() {
   const router = useRouter();
+  const { viewMode } = useViewMode();
   const [text, setText] = useState("");
   const [lineIndex, setLineIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isContactOpen, setIsContactOpen] = useState(false);
+
+  const isRecruiterView = viewMode === "recruiter";
+  const currentPortrait = isRecruiterView ? portraitProfessional : portrait;
 
   useEffect(() => {
     if (lineIndex >= lines.length) return;
@@ -84,7 +90,7 @@ export default function HomeHero() {
         <div className="w-full md:w-1/2 flex justify-center">
           <div className="relative w-72 h-[400px] md:w-96 md:h-[600px] group">
             <Image
-              src={portrait}
+              src={currentPortrait}
               alt="Saheli"
               fill
               className="rounded-3xl grayscale contrast-110 transition duration-500 group-hover:brightness-110 object-cover"
@@ -103,25 +109,80 @@ export default function HomeHero() {
             <span className="cursor-blink">▌</span>
           </div>
 
-          <div className="flex gap-4 pt-4 body-content">
-            <button
-              type="button"
-              onClick={() => setIsContactOpen(true)}
-              className=" px-8 py-3 cursor-pointer rounded-full bg-slate-600 text-black sm:text-md hover:bg-slate-500 transition flex items-center gap-2"
-            >
-              Contact Me
-              <ArrowRightIcon className="w-4 h-4" />
-            </button>
+          {!isRecruiterView ? (
+            <div className="flex gap-4 pt-4 body-content">
+              <button
+                type="button"
+                onClick={() => setIsContactOpen(true)}
+                className=" px-8 py-3 cursor-pointer rounded-full bg-slate-600 text-black sm:text-md hover:bg-slate-500 transition flex items-center gap-2"
+              >
+                Contact Me
+                <ArrowRightIcon className="w-4 h-4" />
+              </button>
 
-            {/* <button
-              type="button"
-              onClick={() => router.push("/today")}
-              className="px-8 py-3 rounded-full border border-slate-500 text-slate-400  sm:text-md hover:bg-slate-900 hover:text-white transition flex items-center gap-2 ar"
-            >
-              See Today
-              <ArrowRightIcon className="w-4 h-4" />
-            </button> */}
-          </div>
+              {/* <button
+                type="button"
+                onClick={() => router.push("/today")}
+                className="px-8 py-3 rounded-full border border-slate-500 text-slate-400  sm:text-md hover:bg-slate-900 hover:text-white transition flex items-center gap-2 ar"
+              >
+                See Today
+                <ArrowRightIcon className="w-4 h-4" />
+              </button> */}
+            </div>
+          ) : (
+            <div className="flex gap-4 pt-4 body-content">
+              <a
+                href="/assets/Saheli_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 cursor-pointer rounded-full bg-slate-600 text-black sm:text-md hover:bg-slate-500 transition flex items-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+                View Resume
+              </a>
+
+              <a
+                href="/assets/Saheli_Resume.pdf"
+                download="Saheli_Mondal_Resume.pdf"
+                className="px-8 py-3 cursor-pointer rounded-full border border-slate-500 text-slate-400 sm:text-md hover:bg-slate-900 hover:text-white transition flex items-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+                Download Resume
+              </a>
+            </div>
+          )}
 
           <div className="flex items-center gap-6 border-t border-zinc-700 mt-8 pt-2">
             <span className="text-slate-400 text-[0.55rem] md:text-[0.65rem] arcade-title">

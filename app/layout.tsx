@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./global.css";
 import { Metadata } from "next";
+import { ViewModeProvider } from "@/context/ViewModeContext";
 
 export const metadata: Metadata = {
   title: "Saheli Mondal | Full Stack Developer",
@@ -27,11 +28,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className="bg-[#0a0a0a]" suppressHydrationWarning>
-        <main>
-          <Navbar />
-          {children}
-        </main>
-        <Footer />
+        <ViewModeProvider>
+          <main>
+            <Navbar />
+            {children}
+          </main>
+          <Footer />
+        </ViewModeProvider>
       </body>
     </html>
   );
