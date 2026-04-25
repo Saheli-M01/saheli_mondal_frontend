@@ -99,7 +99,7 @@ function ProjectCard({
   );
 
   return (
-    <div className="sticky top-24 flex justify-center pb-8">
+    <div className="sticky top-32 flex justify-center pb-8">
       <motion.div
         style={{ scale, y }}
         className="w-full max-w-3xl rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl shadow-[0_30px_100px_rgba(0,0,0,0.7)] overflow-hidden origin-top"
