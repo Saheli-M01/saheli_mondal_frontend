@@ -63,7 +63,7 @@ export default function GitHubActivitySection({
 
   return (
     <section
-      className="bg-black text-white px-6 py-20 max-w-7xl mx-auto"
+      className="bg-black text-white px-6 md:py-20 max-w-7xl mx-auto"
       id="github-activity"
     >
       <div className="max-w-7xl mx-auto border-t border-slate-700/70 pt-10 font-sans min-h-[600px]">
