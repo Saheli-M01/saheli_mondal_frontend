@@ -31,14 +31,18 @@ export default function Navbar() {
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsDropdownOpen(false);
       }
     }
 
     if (isDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [isDropdownOpen]);
   return (
@@ -62,10 +66,11 @@ export default function Navbar() {
                     router.push("/");
                   }
                 }}
-                className={`cursor-pointer flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${pathname === "/"
-                  ? "text-white bg-gray-800"
-                  : "text-gray-400 hover:text-gray-200"
-                  }`}
+                className={`cursor-pointer flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${
+                  pathname === "/"
+                    ? "text-white bg-gray-800"
+                    : "text-gray-400 hover:text-gray-200"
+                }`}
               >
                 <span>{item.icon}</span>
                 <span>{item.name}</span>
@@ -113,10 +118,11 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${isActive
-                ? "text-white bg-gray-800"
-                : "text-gray-400 hover:text-gray-200"
-                }`}
+              className={`flex items-center gap-1 text-xs px-2 py-1 rounded-full transition ${
+                isActive
+                  ? "text-white bg-gray-800"
+                  : "text-gray-400 hover:text-gray-200"
+              }`}
             >
               <span>{item.icon}</span>
               <span>{item.name}</span>
@@ -139,6 +145,7 @@ export default function Navbar() {
                   onClick={() => {
                     setViewMode("recruiter");
                     setIsDropdownOpen(false);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                   className={`w-full text-left px-4 py-2 text-sm transition ${
                     viewMode === "recruiter"
@@ -152,6 +159,7 @@ export default function Navbar() {
                   onClick={() => {
                     setViewMode("personal");
                     setIsDropdownOpen(false);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                   className={`w-full text-left px-4 py-2 text-sm transition ${
                     viewMode === "personal"
