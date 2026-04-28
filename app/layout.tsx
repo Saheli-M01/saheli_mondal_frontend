@@ -6,11 +6,60 @@ import { ViewModeProvider } from "@/context/ViewModeContext";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Saheli Mondal | Full Stack Developer",
+  metadataBase: new URL("https://sahelimondal.in"),
+
+  title: {
+    default: "Saheli Mondal | Full Stack Developer",
+    template: "%s | Saheli Mondal",
+  },
+
   description:
-    "Portfolio of Saheli Mondal - Building real projects and learning daily.",
+    "Portfolio of Saheli Mondal — Full Stack Developer building real-world projects with React, Next.js, and modern technologies. Passionate about creating impactful web experiences.",
+
+  keywords: [
+    "Saheli Mondal",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js Developer",
+    "Web Developer Portfolio",
+    "Frontend Developer India",
+    "Software Engineer Portfolio",
+  ],
+
+  authors: [{ name: "Saheli Mondal" }],
+  creator: "Saheli Mondal",
+
   icons: {
-    icon: "/assets/portrait.png",
+    icon: "/assets/portrait_meta.png",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://sahelimondal.in",
+    title: "Saheli Mondal | Full Stack Developer",
+    description:
+      "Explore projects, skills, and experience of Saheli Mondal — Full Stack Developer building modern web applications.",
+    images: [
+      {
+        url: "https://sahelimondal.in/assets/portrait_meta.png", // ✅ fixed
+        width: 1200,
+        height: 630,
+        alt: "Saheli Mondal Portfolio",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Saheli Mondal | Full Stack Developer",
+    description:
+      "Full Stack Developer building modern web apps with React & Next.js.",
+    images: ["https://sahelimondal.in/assets/portrait_meta.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
