@@ -147,7 +147,7 @@ export default function Navbar() {
                     setIsDropdownOpen(false);
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
-                  className={`w-full text-left px-4 py-2 text-sm transition ${
+                  className={`cursor-pointer w-full text-left px-4 py-2 text-sm transition ${
                     viewMode === "recruiter"
                       ? "bg-gray-800 text-white"
                       : "text-gray-300 hover:bg-gray-800 hover:text-white"
@@ -161,7 +161,7 @@ export default function Navbar() {
                     setIsDropdownOpen(false);
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
-                  className={`w-full text-left px-4 py-2 text-sm transition ${
+                  className={`cursor-pointer w-full text-left px-4 py-2 text-sm transition ${
                     viewMode === "personal"
                       ? "bg-gray-800 text-white"
                       : "text-gray-300 hover:bg-gray-800 hover:text-white"
