@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { XIcon } from "@/components/icons/Icon"; // Assuming XIcon works as close button, or we can use an SVG
 
 export default function ContactModal({
   isOpen,

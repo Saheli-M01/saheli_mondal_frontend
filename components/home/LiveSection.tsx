@@ -32,12 +32,12 @@ const liveProjects: LiveProject[] = [
     description:
       "A modern social platform that allows users to share thoughts, stories, and ideas in a clean, distraction-free environment while enabling real-time interaction.",
     image: "/assets/project/speak_your_mind.png",
-    live: "https://speak-your-mind-three.vercel.app/",
+    live: "https://speakwithjatin.in",
   },
   {
     name: "Portfolio Terminal",
     status: "1st phase deployed",
-    stack: ["Next.js", "Tailwind", "Framer Motion", "Springboot",],
+    stack: ["Next.js", "Tailwind", "Framer Motion", "Springboot"],
     description:
       "A unique terminal-inspired portfolio featuring interactive commands, dynamic transitions, and a developer-centric user experience.",
     image: "/assets/project/portfolio.png",
@@ -120,7 +120,9 @@ function ProjectCard({
           {/* TITLE + STATUS */}
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-lg md:text-xl font-semibold">{project.name}</h3>
-            <span className={`text-[10px] uppercase tracking-wider border px-2 py-0.5 rounded-full ${getStatusColor(project.status)}`}>
+            <span
+              className={`text-[10px] uppercase tracking-wider border px-2 py-0.5 rounded-full ${getStatusColor(project.status)}`}
+            >
               {project.status}
             </span>
           </div>

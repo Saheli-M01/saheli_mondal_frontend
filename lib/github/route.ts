@@ -3,8 +3,8 @@ export const dynamic = "force-dynamic";
 
 export type ActivityItem = {
   type: "push" | "pr" | "create";
-  repo: string; // full: "ankit-orion/socialsync"
-  repoShort: string; // just: "socialsync"
+  repo: string;
+  repoShort: string; 
   description: string;
   commitCount?: number;
   timestamp: string;
