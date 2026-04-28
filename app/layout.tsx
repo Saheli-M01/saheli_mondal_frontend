@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "https://sahelimondal.in/assets/og-image.png", // 🔥 NEW IMAGE (IMPORTANT)
+        url: "https://sahelimondal.in/assets/portrait_meta.png",
         width: 1200,
         height: 630,
         alt: "Saheli Mondal Portfolio",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Saheli Mondal | Full Stack Developer",
     description:
       "Full Stack Developer building modern web apps with React & Next.js.",
-    images: ["https://sahelimondal.in/assets/og-image.png"],
+    images: ["https://sahelimondal.in/assets/portrait_meta.png"],
   },
 
   robots: {
