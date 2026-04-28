@@ -14,16 +14,15 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Portfolio of Saheli Mondal — Full Stack Developer building real-world projects with React, Next.js, and modern technologies. Passionate about creating impactful web experiences.",
+    "Full Stack Developer crafting modern, scalable web applications using React, Next.js, and cutting-edge technologies. Explore my projects, skills, and journey.",
 
   keywords: [
     "Saheli Mondal",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
-    "Web Developer Portfolio",
-    "Frontend Developer India",
-    "Software Engineer Portfolio",
+    "Portfolio",
+    "Web Developer India",
   ],
 
   authors: [{ name: "Saheli Mondal" }],
@@ -35,13 +34,17 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
+    locale: "en_IN",
     url: "https://sahelimondal.in",
+    siteName: "Saheli Mondal Portfolio",
+
     title: "Saheli Mondal | Full Stack Developer",
     description:
-      "Explore projects, skills, and experience of Saheli Mondal — Full Stack Developer building modern web applications.",
+      "Full Stack Developer building real-world projects with React & Next.js. Explore my work and skills.",
+
     images: [
       {
-        url: "https://sahelimondal.in/assets/portrait_meta.png", // ✅ fixed
+        url: "https://sahelimondal.in/assets/og-image.png", // 🔥 NEW IMAGE (IMPORTANT)
         width: 1200,
         height: 630,
         alt: "Saheli Mondal Portfolio",
@@ -54,15 +57,18 @@ export const metadata: Metadata = {
     title: "Saheli Mondal | Full Stack Developer",
     description:
       "Full Stack Developer building modern web apps with React & Next.js.",
-    images: ["https://sahelimondal.in/assets/portrait_meta.png"],
+    images: ["https://sahelimondal.in/assets/og-image.png"],
   },
 
   robots: {
     index: true,
     follow: true,
   },
-};
 
+  alternates: {
+    canonical: "https://sahelimondal.in",
+  },
+};
 type RootLayoutProps = {
   children: React.ReactNode;
 };
