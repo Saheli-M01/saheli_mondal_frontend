@@ -110,6 +110,8 @@ function ProjectCard({
             src={project.image}
             alt={project.name}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
             className="object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

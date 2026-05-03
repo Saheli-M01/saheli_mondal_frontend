@@ -93,6 +93,8 @@ export default function HomeHero() {
               src={currentPortrait}
               alt="Saheli"
               fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="rounded-3xl grayscale contrast-110 transition duration-500 group-hover:brightness-110 object-cover"
             />
             <div className="absolute inset-0 rounded-3xl shadow-[0_0_100px_rgba(255,255,255,0.1)]" />
@@ -159,8 +161,6 @@ export default function HomeHero() {
                 </svg>
                 View Resume
               </a>
-
-              
             </div>
           )}
 
