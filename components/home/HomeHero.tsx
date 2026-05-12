@@ -103,7 +103,7 @@ export default function HomeHero() {
 
         <div className="w-full md:w-1/2 md:pl-12 space-y-8">
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem] mb-6">
-            [ PORTFOLIO TERMINAL ]
+            <h1>[ PORTFOLIO TERMINAL ]</h1>
           </div>
 
           <div className="bg-[#0D0D0D] h-60 terminal-content border border-slate-400/40 rounded-lg p-5 max-w-xl whitespace-pre-wrap overflow-hidden text-slate-300 bg-gray-900/50 text-sm md:text-md">

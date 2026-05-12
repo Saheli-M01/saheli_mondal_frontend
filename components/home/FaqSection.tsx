@@ -5,33 +5,33 @@ const faqs = [
   {
     question: "C:\\Users\\Guest> whoami",
     answer:
-      "Saheli Mondal — Full-stack developer focused on building scalable, performant, and user-centric web applications."
+      "Saheli Mondal — Full-stack developer focused on building scalable, performant, and user-centric web applications.",
   },
   {
     question: "C:\\Users\\Guest> cat skills.json",
     answer:
-      "{\n  frontend: [React, Next.js, TailwindCSS, Framer Motion],\n  backend: [Node.js, Spring Boot],\n  databases: [PostgreSQL],\n  core: [DSA, OOPS, LLD]\n}"
+      "{\n  frontend: [React, Next.js, TailwindCSS, Framer Motion],\n  backend: [Node.js, Spring Boot],\n  databases: [PostgreSQL],\n  core: [DSA, OOPS, LLD]\n}",
   },
   {
     question: "C:\\Users\\Guest> ls projects/",
     answer:
-      "- GetDoIt → Full-stack task manager with live deployment\n- Portfolio → Terminal-inspired personal site\n- Visco → Algorithm visualizer with animations\n- Soeak-Your-Mond → Role based latform for therapist\nMore coming soon..."
+      "- GetDoIt → Full-stack task manager with live deployment\n- Portfolio → Terminal-inspired personal site\n- Visco → Algorithm visualizer with animations\n- Soeak-Your-Mond → Role based latform for therapist\nMore coming soon...",
   },
   {
     question: "C:\\Users\\Guest> ping mindset -n 1",
     answer:
-      "Reply from mindset: growth-focused\nStatus: Consistently learning, building, and improving."
+      "Reply from mindset: growth-focused\nStatus: Consistently learning, building, and improving.",
   },
   {
-    question: "C:\\Users\\Guest> grep -i \"goal\" career.txt",
+    question: 'C:\\Users\\Guest> grep -i "goal" career.txt',
     answer:
-      "→ Crack a SDE role\n→ Build impactful products \n→ Master system design + scalable architectures"
+      "→ Crack a SDE role\n→ Build impactful products \n→ Master system design + scalable architectures",
   },
   {
     question: "C:\\Users\\Guest> ./hire_me.sh",
     answer:
-      "Initializing...\n\n✔ Problem solver mindset\n✔ Strong frontend + backend foundation\n✔ Fast learner, team player\n\nReady to contribute from Day 0."
-  }
+      "Initializing...\n\n✔ Problem solver mindset\n✔ Strong frontend + backend foundation\n✔ Fast learner, team player\n\nReady to contribute from Day 0.",
+  },
 ];
 
 export default function FaqSection() {
@@ -42,7 +42,7 @@ export default function FaqSection() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-10 text-center">
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
-            [ F.A.Q ]
+            <h1>[ F.A.Q ]</h1>
           </div>
           <p className="mt-3 text-center max-w-full text-sm md:text-base text-slate-400 body-content">
             System Queries
@@ -52,7 +52,6 @@ export default function FaqSection() {
         <div className="rounded-lg border border-gray-700 bg-[#0c0c0c] overflow-hidden shadow-2xl font-mono text-sm md:text-base">
           {/* Terminal Header - Windows CMD Style */}
           <div className="bg-[#1f1f1f] px-3 py-2 flex items-center justify-between border-b border-gray-700">
-
             {/* Left: Icon + Title */}
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-black border border-gray-500 flex items-center justify-center text-[10px] font-bold">
@@ -64,12 +63,12 @@ export default function FaqSection() {
             </div>
 
             {/* Right: Window Controls */}
-           
           </div>
           {/* Terminal Body */}
           <div className="p-4 md:p-6 space-y-4">
             <div className="text-gray-400 mb-6">
-              Microsoft Windows [Version 10.0.19045.4291]<br />
+              Microsoft Windows [Version 10.0.19045.4291]
+              <br />
               (c) Microsoft Corporation. All rights reserved.
             </div>
 
@@ -83,9 +82,7 @@ export default function FaqSection() {
                 >
                   <span className="text-white">{faq.question}</span>
                   {openIndex === index ? null : (
-                    <span className="ml-2 animate-pulse text-gray-500">
-                      _
-                    </span>
+                    <span className="ml-2 animate-pulse text-gray-500">_</span>
                   )}
                 </button>
 

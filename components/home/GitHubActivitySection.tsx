@@ -76,7 +76,7 @@ export default function GitHubActivitySection({
             transition={{ duration: 0.5 }}
           >
             <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
-              [ Github ]
+              <h1>[ Github ]</h1>
             </div>
             <p className="mt-3 text-center max-w-full text-sm md:text-base text-slate-400 body-content">
               Recent GitHub Contributions & Activity
@@ -138,7 +138,9 @@ export default function GitHubActivitySection({
                     <div className="mb-6">
                       <h4 className="text-[14px] text-white flex items-center justify-between font-semibold sm:font-normal">
                         <span>
-                          Created {totalCommits} commits across {allPushes.length} repositor{allPushes.length > 1 ? "ies" : "y"}
+                          Created {totalCommits} commits across{" "}
+                          {allPushes.length} repositor
+                          {allPushes.length > 1 ? "ies" : "y"}
                         </span>
                       </h4>
                     </div>
@@ -276,7 +278,12 @@ export default function GitHubActivitySection({
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
                 </svg>
               </a>
             </motion.div>
