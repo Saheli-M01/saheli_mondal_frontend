@@ -174,7 +174,7 @@ export default function LiveSection() {
         {/* HEADING */}
         <div className="mb-16 text-center">
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
-            <h1>[ LIVE PROJECTS ]</h1>
+            <h2>[ LIVE PROJECTS ]</h2>
           </div>
           <p className="mt-3 text-center max-w-full text-sm md:text-base text-slate-400 body-content">
             Things I&apos;m Building & Shipping

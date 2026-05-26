@@ -2,6 +2,7 @@
 
 import HomeHero from "@/components/home/HomeHero";
 import LiveSection from "@/components/home/LiveSection";
+import PlaySection from "@/components/home/PlaySection";
 import GitHubActivitySection from "@/components/home/GitHubActivitySection";
 import SkillsSection from "@/components/home/SkillsSection";
 import MotivationSection from "@/components/home/MotivationSection";
@@ -17,6 +18,7 @@ export default function Home() {
       <HomeHero />
       <SkillsSection />
       <LiveSection />
+      <PlaySection />
       <GitHubActivitySection username="Saheli-M01" />
       {!isRecruiterView && <MotivationSection />}
       {!isRecruiterView && <FaqSection />}

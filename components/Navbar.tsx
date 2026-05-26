@@ -23,9 +23,9 @@ export default function Navbar() {
   const items = [
     { name: "Saheli", href: "/", icon: <HomeIcon /> },
     // { name: "Today", href: "/today", icon: <CalendarIcon /> },
-    { name: "Play", href: "/play", icon: <PlayIcon /> },
     // { name: "Ask Me", href: "/ask", icon: <MessageIcon /> },
     { name: "Live", href: "#live", icon: <RadioIcon /> },
+    { name: "Play", href: "#play", icon: <PlayIcon /> },
   ];
 
   // Close dropdown when clicking outside

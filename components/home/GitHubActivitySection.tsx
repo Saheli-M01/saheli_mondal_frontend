@@ -76,7 +76,7 @@ export default function GitHubActivitySection({
             transition={{ duration: 0.5 }}
           >
             <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
-              <h1>[ Github ]</h1>
+              <h2>[ Github ]</h2>
             </div>
             <p className="mt-3 text-center max-w-full text-sm md:text-base text-slate-400 body-content">
               Recent GitHub Contributions & Activity
@@ -218,7 +218,7 @@ export default function GitHubActivitySection({
                               viewBox="0 0 16 16"
                               fill="currentColor"
                             >
-                              <path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z"></path>
+                              <path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h2.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z"></path>
                             </svg>
                             <a
                               href={`https://github.com/${create.repo}`}

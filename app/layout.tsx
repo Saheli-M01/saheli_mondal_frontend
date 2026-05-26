@@ -1,5 +1,4 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalShell from "@/components/ConditionalShell";
 import "./global.css";
 import { Metadata } from "next";
 import { ViewModeProvider } from "@/context/ViewModeContext";
@@ -94,11 +93,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
       <body className="bg-[#0a0a0a]" suppressHydrationWarning>
         <ViewModeProvider>
-          <main>
-            <Navbar />
-            {children}
-          </main>
-          <Footer />
+          <ConditionalShell>
+            <main>
+              {children}
+            </main>
+          </ConditionalShell>
         </ViewModeProvider>
 
         {/* Google Analytics */}

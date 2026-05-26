@@ -42,7 +42,7 @@ export default function FaqSection() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-10 text-center">
           <div className="arcade-title text-slate-400 text-[0.6rem] md:text-[0.8rem]">
-            <h1>[ F.A.Q ]</h1>
+            <h2>[ F.A.Q ]</h2>
           </div>
           <p className="mt-3 text-center max-w-full text-sm md:text-base text-slate-400 body-content">
             System Queries
